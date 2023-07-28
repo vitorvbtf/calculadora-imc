@@ -5,18 +5,21 @@ function escopo() {
   function recebaEvento(event) {
     event.preventDefault();
     const peso = document.querySelector(".peso");
-    const altura = document.querySelector(".altura");
+    let altura = document.querySelector(".altura"); 
     let cor = "white";
-    let imc = peso.value / (altura.value * altura.value);
-
     if (altura.value == "" && peso.value == "") {
       console.log("passou aqui");
-      resultado.innerHTML = `<div style="background-color:white; border-radius: 4px; border: 6px solid red;"> Peso inválido <br> Altura inválida </div>`;
+      resultado.innerHTML = `<div style="background-color:red; border-radius: 4px; color:white"> Peso inválido <br> Altura inválida </div>`;
     } else if (altura.value == "") {
-      resultado.innerHTML = `<div style="background-color:white; border-radius: 4px; border: 6px solid red;"> Altura inválida </div>`;
+      resultado.innerHTML = `<div style="background-color:red; border-radius: 4px; color:white"> Altura inválida </div>`;
     } else if (peso.value == "") {
-      resultado.innerHTML = `<div style="background-color:white; border-radius: 4px; border: 6px solid red;"> Peso inválido </div>`;
+      resultado.innerHTML = `<div style="background-color:red; border-radius: 4px; color:white"> Peso inválido </div>`;
     } else {
+
+    altura = altura.value / 100
+    let imc = peso.value / (altura * altura);
+
+   
 
       function calculoImc(imc) {
         if (imc > 40) {

@@ -45,7 +45,7 @@ form input, form label, form button{
 
 
 form input{
-    height: 60px;
+    padding: 10px;
     font-size: 20px;
 }
 
@@ -77,6 +77,9 @@ form button:hover{
 
 
 @media (max-width:600px) {
+    body{
+        font-size:1.1em;
+    }
    .principal{
         padding: 0;
         display: flex;
@@ -100,11 +103,11 @@ form button:hover{
         width: 100%;
     }
     form input{
-        height: 50%;
+        height: 100%;
     }
-   /*
-    body{
-        font-size:0.8em;
-    }*/
+    button{
+        width: 50%;
+    }
+    
     
 }
